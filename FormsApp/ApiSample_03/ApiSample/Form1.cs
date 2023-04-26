@@ -1,4 +1,5 @@
-﻿using Hotcakes.CommerceDTO.v1.Client;
+﻿using Hotcakes.CommerceDTO.v1.Catalog;
+using Hotcakes.CommerceDTO.v1.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace ApiSample
         string _url = "http://20.234.113.211:8088";
         string _key = "1-eaf534a5-8297-43cd-a301-da0483a0f0f4";
         Api _proxy;
+        List<ProductDTO> _products;
         public Form1()
         {
             InitializeComponent();
@@ -26,9 +28,30 @@ namespace ApiSample
         {
 
             var snaps = _proxy.CategoriesFindAll();
-            var a = _proxy.ProductsFindAll();
+            _products = _proxy.ProductsFindAll().Content;
 
-            a.Content.ForEach(i => listBox1.Items.Add(i.ProductName));
+            listBox1.Items.Clear();
+            _products.ForEach(i => listBox1.Items.Add(i.ProductName));
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ProductDTO product=_products.Where(p=>p.ProductName==(sender as ListBox).SelectedItem).FirstOrDefault();
+
+            textBox2.Text = product.ProductName;
+            //var image = _proxy.ProductImagesFind(product.Bvin);
+            //pictureBox1.Image = new Bitmap(_proxy.ProductImagesFind(product.Bvin).Content.FileName);
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProductDTO product = _products.Where(p => p.ProductName == listBox1.SelectedItem).FirstOrDefault();
+
+            product.ProductName=textBox2.Text;
+
+            _proxy.ProductsUpdate(product);
+            Form1_Load(sender, e);
         }
     }
 }
