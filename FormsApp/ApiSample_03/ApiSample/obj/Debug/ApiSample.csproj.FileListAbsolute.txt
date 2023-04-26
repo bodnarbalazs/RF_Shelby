@@ -1,0 +1,12 @@
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\bin\Debug\ApiSample.exe
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\bin\Debug\ApiSample.pdb
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\bin\Debug\Hotcakes.CommerceDTO.dll
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\bin\Debug\Hotcakes.Web.dll
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.csproj.AssemblyReference.cache
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.csproj.SuggestedBindingRedirects.cache
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.csproj.CoreCompileInputs.cache
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.csproj.CopyComplete
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.exe
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.pdb
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.Form1.resources
+\\Mac\Home\Downloads\ApiSample_03\ApiSample\obj\Debug\ApiSample.csproj.GenerateResource.cache
