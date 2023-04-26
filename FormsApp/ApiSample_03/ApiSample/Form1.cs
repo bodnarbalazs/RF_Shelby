@@ -18,6 +18,7 @@ namespace ApiSample
         string _key = "1-eaf534a5-8297-43cd-a301-da0483a0f0f4";
         Api _proxy;
         List<ProductDTO> _products;
+        int _listId=0;
         public Form1()
         {
             InitializeComponent();
@@ -41,12 +42,12 @@ namespace ApiSample
             textBox2.Text = product.ProductName;
             //var image = _proxy.ProductImagesFind(product.Bvin);
             //pictureBox1.Image = new Bitmap(_proxy.ProductImagesFind(product.Bvin).Content.FileName);
-            
+            _listId=listBox1.Items.IndexOf(product.ProductName);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProductDTO product = _products.Where(p => p.ProductName == listBox1.SelectedItem).FirstOrDefault();
+            ProductDTO product = _products.Where(p => p.ProductName == listBox1.Items[_listId]).FirstOrDefault();
 
             product.ProductName=textBox2.Text;
 

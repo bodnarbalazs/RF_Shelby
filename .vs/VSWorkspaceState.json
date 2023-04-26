@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\FormsApp",
+    "\\FormsApp\\ApiSample_03"
   ],
-  "SelectedNode": "\\ShelbyEditor.sln",
+  "SelectedNode": "\\FormsApp\\ApiSample_03\\ShelbyEditor.sln",
   "PreviewInSolutionExplorer": false
 }
