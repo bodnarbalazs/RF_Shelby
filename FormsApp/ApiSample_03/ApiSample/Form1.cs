@@ -31,7 +31,7 @@ namespace ApiSample
 
             var snaps = _proxy.CategoriesFindAll();
             _products = _proxy.ProductsFindAll().Content;
-
+            
             listBox1.Items.Clear();
             _products.ForEach(i => listBox1.Items.Add(i.ProductName));
         }
@@ -44,9 +44,12 @@ namespace ApiSample
             textBox3.Text = product.Sku;
             textBox4.Text = product.SiteCost.ToString();
             textBox5.Text = product.SitePrice.ToString();
+            textBox6.Text = product.ImageFileMedium;
+            var X = product.ImageFileMedium;
+            pictureBox1.ImageLocation = $"Shelbykepek/{X}.png";
             //var image = _proxy.ProductImagesFind(product.Bvin);
             //pictureBox1.Image = new Bitmap(_proxy.ProductImagesFind(product.Bvin).Content.FileName);
-            _listId =listBox1.Items.IndexOf(product.ProductName);
+            _listId = listBox1.Items.IndexOf(product.ProductName);
         }
 
         private void button1_Click(object sender, EventArgs e)
