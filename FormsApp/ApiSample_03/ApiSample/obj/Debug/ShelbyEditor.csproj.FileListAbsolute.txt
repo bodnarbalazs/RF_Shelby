@@ -35,3 +35,4 @@ C:\Users\Dell\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\S
 C:\Users\Dell\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.exe
 C:\Users\Dell\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.pdb
 C:\Users\Dell\source\repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.Properties.Resources.resources
+C:\Users\balazsbodnar\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.Properties.Resources.resources
