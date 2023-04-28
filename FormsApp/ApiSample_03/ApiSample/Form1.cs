@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,7 +31,7 @@ namespace ApiSample
 
             var snaps = _proxy.CategoriesFindAll();
             _products = _proxy.ProductsFindAll().Content;
-
+            
             listBox1.Items.Clear();
             _products.ForEach(i => listBox1.Items.Add(i.ProductName));
         }
@@ -40,9 +41,15 @@ namespace ApiSample
             ProductDTO product=_products.Where(p=>p.ProductName==(sender as ListBox).SelectedItem).FirstOrDefault();
 
             textBox2.Text = product.ProductName;
+            textBox3.Text = product.Sku;
+            textBox4.Text = product.SiteCost.ToString();
+            textBox5.Text = product.SitePrice.ToString();
+            textBox6.Text = product.LongDescription;
+            var X = product.ImageFileMedium;
+            pictureBox1.ImageLocation = $"Shelbykepek/{X}.png";
             //var image = _proxy.ProductImagesFind(product.Bvin);
             //pictureBox1.Image = new Bitmap(_proxy.ProductImagesFind(product.Bvin).Content.FileName);
-            _listId=listBox1.Items.IndexOf(product.ProductName);
+            _listId = listBox1.Items.IndexOf(product.ProductName);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,9 +57,78 @@ namespace ApiSample
             ProductDTO product = _products.Where(p => p.ProductName == listBox1.Items[_listId]).FirstOrDefault();
 
             product.ProductName=textBox2.Text;
-
+            product.SitePrice = decimal.Parse(textBox5.Text);
+            product.Sku = textBox3.Text;
+            product.LongDescription=textBox6.Text;
             _proxy.ProductsUpdate(product);
             Form1_Load(sender, e);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            var products = from x in _products
+                           where x.ProductName.Contains(textBox1.Text)
+                           select x.ProductName;
+            listBox1.DataSource=products.ToList();
+            listBox1.DisplayMember = "ProductName";
+        }
+
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox2, "nem lehet üres");
+            }
+        }
+
+        private void textBox2_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(textBox2, string.Empty);
+        }
+
+        private void textBox3_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox3.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox3, "nem lehet üres");
+            }
+        }
+
+        private void textBox3_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(textBox3,String.Empty);
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            Regex regex = new Regex("^[0-9]{4,6}$");
+            if (!regex.IsMatch(textBox5.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox5, "Nem 4 és 6 közötti számjegyet adtál meg");
+
+            }
+        }
+
+        private void textBox5_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(textBox5,String.Empty);
+        }
+
+        private void textBox6_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox6.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox6, "nem lehet üres");
+            }
+        }
+
+        private void textBox6_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(textBox6, String.Empty);
         }
     }
 }
