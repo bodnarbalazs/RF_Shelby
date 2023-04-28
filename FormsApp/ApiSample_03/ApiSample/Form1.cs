@@ -44,7 +44,7 @@ namespace ApiSample
             textBox3.Text = product.Sku;
             textBox4.Text = product.SiteCost.ToString();
             textBox5.Text = product.SitePrice.ToString();
-            textBox6.Text = product.ImageFileMedium;
+            textBox6.Text = product.LongDescription;
             var X = product.ImageFileMedium;
             pictureBox1.ImageLocation = $"Shelbykepek/{X}.png";
             //var image = _proxy.ProductImagesFind(product.Bvin);
@@ -59,6 +59,7 @@ namespace ApiSample
             product.ProductName=textBox2.Text;
             product.SitePrice = decimal.Parse(textBox5.Text);
             product.Sku = textBox3.Text;
+            product.LongDescription=textBox6.Text;
             _proxy.ProductsUpdate(product);
             Form1_Load(sender, e);
         }
@@ -114,6 +115,20 @@ namespace ApiSample
         private void textBox5_Validated(object sender, EventArgs e)
         {
             errorProvider1.SetError(textBox5,String.Empty);
+        }
+
+        private void textBox6_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox6.Text))
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(textBox6, "nem lehet üres");
+            }
+        }
+
+        private void textBox6_Validated(object sender, EventArgs e)
+        {
+            errorProvider1.SetError(textBox6, String.Empty);
         }
     }
 }
