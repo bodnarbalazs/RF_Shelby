@@ -77,7 +77,7 @@ namespace ApiSample
             var products = from x in _products
                            where x.ProductName.Contains(textBox1.Text)
                            select x.ProductName;
-            listBox1.DataSource=products.ToList();
+            listBox1.DataSource = products.ToList();
             listBox1.DisplayMember = "ProductName";
         }
 
@@ -111,11 +111,11 @@ namespace ApiSample
 
         private void textBox5_Validating(object sender, CancelEventArgs e)
         {
-            Regex regex = new Regex("^[0-9]$");
+            Regex regex = new Regex("^[0-9]{4,6}$");
             if (!regex.IsMatch(textBox5.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(textBox5, "Nemnegatív számként add meg az árat!");
+                errorProvider1.SetError(textBox5, "4-6 számjegyű számként add meg az árat!");
 
             }
         }
