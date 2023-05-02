@@ -81,12 +81,18 @@ namespace ApiSample
             listBox1.DisplayMember = "ProductName";
         }
 
+        public bool ValidateNonEmpty(string input)
+        {
+            Regex regex = new Regex("^[a-zA-Z][a-zA-Z0-9]*$");
+            return regex.IsMatch(input);
+        }
+
         private void textBox2_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox2.Text))
+            if (!ValidateNonEmpty(textBox2.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(textBox2, "nem lehet üres");
+                errorProvider1.SetError(textBox2, "nem lehet üres és csak nem speciális karaktereket tartalmazhat");
             }
         }
 
@@ -97,7 +103,7 @@ namespace ApiSample
 
         private void textBox3_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox3.Text))
+            if (!ValidateNonEmpty(textBox3.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox3, "nem lehet üres");
@@ -131,7 +137,7 @@ namespace ApiSample
 
         private void textBox6_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox6.Text))
+            if (ValidateNonEmpty(textBox6.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox6, "nem lehet üres");

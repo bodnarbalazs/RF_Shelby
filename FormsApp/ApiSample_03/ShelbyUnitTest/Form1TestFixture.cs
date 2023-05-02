@@ -31,5 +31,26 @@ namespace ShelbyUnitTest
             return result;
         }
 
+
+        [Test]
+        [TestCase("1234", ExpectedResult = false)]
+        [TestCase("123456", ExpectedResult = false)]
+        [TestCase("63100", ExpectedResult = false)]
+        [TestCase("1234aabc", ExpectedResult = false)]
+        [TestCase("ab63100", ExpectedResult = true)]
+        [TestCase("ab&c", ExpectedResult = false)]
+        [TestCase("ab-c", ExpectedResult = false)]
+        [TestCase(")c", ExpectedResult = false)]
+        [TestCase("", ExpectedResult = false)]
+        [TestCase("abcd", ExpectedResult = true)]
+        [TestCase("AbCd", ExpectedResult = true)]
+        [TestCase("Abc8d", ExpectedResult = true)]
+        public bool TestNonEmptyValidation(string input)
+        {
+            var form1 = new Form1();
+            bool result = form1.ValidateNonEmpty(input);
+            return result;
+        }
+
     }
 }
