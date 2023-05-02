@@ -36,3 +36,16 @@ C:\Users\Dell\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\A
 C:\Users\Dell\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.pdb
 C:\Users\Dell\source\repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.Properties.Resources.resources
 C:\Users\balazsbodnar\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.Properties.Resources.resources
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\bin\Debug\ApiSample.exe
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\bin\Debug\ApiSample.pdb
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\bin\Debug\Hotcakes.CommerceDTO.dll
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\bin\Debug\Hotcakes.Web.dll
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ShelbyEditor.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ShelbyEditor.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.Form1.resources
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.Properties.Resources.resources
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ShelbyEditor.csproj.GenerateResource.cache
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ShelbyEditor.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ShelbyEditor.csproj.CopyComplete
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.exe
+C:\Users\Dell\Desktop\Shelby\FormsApp\ApiSample_03\ApiSample\obj\Debug\ApiSample.pdb

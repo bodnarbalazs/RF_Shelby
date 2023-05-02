@@ -43,19 +43,20 @@ namespace ApiSample
 
             textBox2.Text = product.ProductName;
             textBox3.Text = product.Sku;
-            textBox4.Text = product.SiteCost.ToString();
+            textBox4.Text = product.SiteCost.ToString();            
             textBox5.Text = product.SitePrice.ToString();
             textBox6.Text = product.LongDescription;
             var X = product.ImageFileMedium;
+            var Xjo=X.Replace(" ","_");
             string currentDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            string filePath = Path.Combine(currentDirectory, "Shelbykepek", X);
+            string filePath = Path.Combine(currentDirectory,"Shelbykepek",Xjo);
             //C:\Users\balazsbodnar\Source\Repos\RF_Shelby\FormsApp\ApiSample_03\ApiSample\Shelbykepek\334990619_751502982999180_7066637949454292715_n.png
-            Bitmap oImage = new Bitmap(filePath);
-            Bitmap resized = new Bitmap(oImage, new Size(220, 270));
-            pictureBox1.Image = resized;
+           Bitmap oImage = new Bitmap(filePath);
+           Bitmap resized = new Bitmap(oImage, new Size(220, 270));
+           pictureBox1.Image = resized;
             //var image = _proxy.ProductImagesFind(product.Bvin);
             //pictureBox1.Image = new Bitmap(_proxy.ProductImagesFind(product.Bvin).Content.FileName);
-            
+            //pictureBox1.Image=Image.FromFile(filePath);
             _listId = listBox1.Items.IndexOf(product.ProductName);
         }
 
@@ -76,7 +77,7 @@ namespace ApiSample
             var products = from x in _products
                            where x.ProductName.Contains(textBox1.Text)
                            select x.ProductName;
-            listBox1.DataSource=products.ToList();
+            listBox1.DataSource = products.ToList();
             listBox1.DisplayMember = "ProductName";
         }
 
@@ -110,11 +111,11 @@ namespace ApiSample
 
         private void textBox5_Validating(object sender, CancelEventArgs e)
         {
-            Regex regex = new Regex("^[0-9]$");
+            Regex regex = new Regex("^[0-9]{4,6}$");
             if (!regex.IsMatch(textBox5.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(textBox5, "Nemnegatív számként add meg az árat!");
+                errorProvider1.SetError(textBox5, "4-6 számjegyű számként add meg az árat!");
 
             }
         }
