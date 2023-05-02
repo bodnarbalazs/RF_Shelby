@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\FormsApp",
-    "\\FormsApp\\ApiSample_03",
-    "\\FormsApp\\ApiSample_03\\ApiSample"
+    "\\DNN_Modul"
   ],
-  "SelectedNode": "\\FormsApp\\ApiSample_03\\ApiSample\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }
