@@ -109,14 +109,18 @@ namespace ApiSample
             errorProvider1.SetError(textBox3,String.Empty);
         }
 
-        private void textBox5_Validating(object sender, CancelEventArgs e)
+        public bool ValidateSellPrice(string input)
         {
             Regex regex = new Regex("^[0-9]{4,6}$");
-            if (!regex.IsMatch(textBox5.Text))
+            return regex.IsMatch(input);
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            if (!ValidateSellPrice(textBox5.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(textBox5, "4-6 számjegyű számként add meg az árat!");
-
             }
         }
 

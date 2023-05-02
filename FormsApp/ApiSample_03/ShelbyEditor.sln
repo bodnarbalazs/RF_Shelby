@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShelbyEditor", "ApiSample\ShelbyEditor.csproj", "{43311DBA-1ABB-4DC3-B7B9-45FC8831BE9D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShelbyUnitTest", "ShelbyUnitTest\ShelbyUnitTest.csproj", "{DC0AA20F-BE6C-4FA3-876B-74F102CB1A01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{43311DBA-1ABB-4DC3-B7B9-45FC8831BE9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43311DBA-1ABB-4DC3-B7B9-45FC8831BE9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43311DBA-1ABB-4DC3-B7B9-45FC8831BE9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC0AA20F-BE6C-4FA3-876B-74F102CB1A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0AA20F-BE6C-4FA3-876B-74F102CB1A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0AA20F-BE6C-4FA3-876B-74F102CB1A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0AA20F-BE6C-4FA3-876B-74F102CB1A01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
