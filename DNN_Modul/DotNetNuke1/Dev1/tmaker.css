@@ -1,0 +1,66 @@
+.DnnModule {
+    background-color:black;
+}
+
+.tmaker-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tmaker-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    flex: 1 1 20%;
+}
+
+#tmaker-3D-model-div {
+    flex: 1 1 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+    #tmaker-3D-model-div canvas {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+.tmaker-size, .tmaker-colour {
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+}
+
+.tmaker-colour {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#white {
+    background-color: white;
+}
