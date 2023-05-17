@@ -1,9 +1,30 @@
-﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<IEnumerable< Shelby.Dnn.Dnn.Shelby.HelloWorld.Models.Item >>
+@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<IEnumerable< Shelby.Dnn.Dnn.Shelby.HelloWorld.Models.Item >>
 
 @using System.Text.RegularExpressions
 @using DotNetNuke.Web.Mvc.Helpers
 
-
 <div id="Items-@Dnn.ModuleContext.ModuleId">
-    <h1>Hello World by Shelby Company ltd.</h1>
+    <script src="https://unpkg.com/three@0.152.2/build/three.js"></script>
+
+
+    <div class="tmaker-container">
+        <div class="tmaker-bar" id="tmaker-size-div">
+            <div class="tmaker-size">XS</div>
+            <div class="tmaker-size">S</div>
+            <div class="tmaker-size">M</div>
+            <div class="tmaker-size">L</div>
+            <div class="tmaker-size">XL</div>
+        </div>
+        <div id="tmaker-3D-model-div">
+
+        </div>
+        <div class="tmaker-bar" id="tmaker-color-div">
+            <div class="tmaker-colour" id="red"></div>
+            <div class="tmaker-colour" id="white"></div>
+            <div class="tmaker-colour" id="green"></div>
+            <div class="tmaker-colour" id="blue"></div>
+            <div class="tmaker-colour" id="yellow"></div>
+        </div>
+    </div>
+    <script src="tmaker.js"></script>
 </div>
