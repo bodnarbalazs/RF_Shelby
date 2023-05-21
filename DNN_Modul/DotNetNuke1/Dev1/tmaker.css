@@ -1,24 +1,31 @@
+/* Main Container */
 .DnnModule {
-    background-color:black;
+    background-color: black;
 }
 
+#main-container {
+    margin-bottom: 10px;
+}
+
+/* Tmaker Container */
 .tmaker-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
+/* Tmaker Bar */
 .tmaker-bar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 20px;
-    flex: 1 1 20%;
+    flex: 1 1 5%;
+    margin: 2%;
 }
 
+/* Tmaker 3D Model Div */
 #tmaker-3D-model-div {
     flex: 1 1 60%;
     display: flex;
@@ -32,19 +39,26 @@
         max-height: 100%;
     }
 
+/* Tmaker Size and Colour */
 .tmaker-size, .tmaker-colour {
-    margin-bottom: 10px;
+    margin: 10px;
     cursor: pointer;
     text-align: center;
     padding: 10px;
+    background-color: white;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5%;
+    background-color:rgba(255,255,255,0.8);
+    font-weight:bold;
 }
 
 .tmaker-colour {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
 }
 
+/* Colour Selections */
 #red {
     background-color: red;
 }
@@ -63,4 +77,134 @@
 
 #white {
     background-color: white;
+}
+
+/* Upload Button Div */
+#uploadButton-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:-30px;
+}
+
+.controlButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(255,255,255,0.3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius:5%;
+}
+
+/* Custom Colour */
+#custom-colour {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: conic-gradient(#ff0000, #ffaa00, #ff0, #0f0, #00f, #a0f, #ff0000);
+}
+
+/* Gender Switcher Div */
+#gender-switcher-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 5%;
+    padding: 5px;
+    box-sizing: border-box;
+    position: relative;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+    #gender-switcher-div .switcher {
+        content: '';
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border-radius: 5%;
+        background-color: rgba(255,255,255,0.8);
+        transition: left 0.3s ease;
+        left: 2.5px;
+        z-index:0;
+    }
+
+
+/* Tmaker Gender */
+.tmaker-gender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255,255,255,0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 5%;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index:1;
+}
+
+#maleSize.selected, #femaleSize.selected {
+    font-weight: bold;
+    /*background: #000;*/
+    color: black;
+}
+    #maleSize.selected ~ .switcher {
+        left: 2.5px;
+    }
+
+    #femaleSize.selected ~ .switcher {
+        left: 52.5px;
+    }
+
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .tmaker-container {
+        flex-direction: column-reverse;
+    }
+
+    .tmaker-bar, #tmaker-3D-model-div {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .tmaker-bar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .tmaker-size, .tmaker-colour {
+        width: 30px;
+        height: 30px;
+    }
+
+    .controlButton {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    #gender-switcher-div {
+        width: 80px;
+        height: 40px;
+    }
+
+        #gender-switcher-div::after {
+            width: 35px;
+            height: 35px;
+        }
+
+    .tmaker-gender {
+        width: 30px;
+        height: 30px;
+    }
 }

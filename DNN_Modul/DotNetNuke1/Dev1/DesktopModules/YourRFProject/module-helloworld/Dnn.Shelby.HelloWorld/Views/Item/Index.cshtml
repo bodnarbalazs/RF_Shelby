@@ -1,33 +1,58 @@
-@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<IEnumerable< Shelby.Dnn.Dnn.Shelby.HelloWorld.Models.Item >>
+﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<IEnumerable< Shelby.Dnn.Dnn.Shelby.HelloWorld.Models.Item >>
 
 @using System.Text.RegularExpressions
 @using DotNetNuke.Web.Mvc.Helpers
 
 <div id="Items-@Dnn.ModuleContext.ModuleId">
-    <script src="https://unpkg.com/three@0.152.2/build/three.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/STLLoader.js"></script>
+    <!-- Import THREE.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+
+
+    <!-- Import OBJLoader.js -->
+    <script src="OBJLoader.js"></script>
+    <script src="MTLLoader.js"></script>
+    <script src="OrbitControls.js"></script>
 
 
 
+    <div id="main-container">
+        <div class="tmaker-container">
+            <div class="tmaker-bar" id="tmaker-size-div">
+                <div class="tmaker-size">XS</div>
+                <div class="tmaker-size">S</div>
+                <div class="tmaker-size">M</div>
+                <div class="tmaker-size">L</div>
+                <div class="tmaker-size">XL</div>
+                <div id="gender-switcher-div" onclick="switchGender()">
+                    <div class="tmaker-gender selected" id="maleSize">M</div>
+                    <div class="switcher"></div>
+                    <div class="tmaker-gender" id="femaleSize">F</div>
+                </div>
+                
 
-    <div class="tmaker-container">
-        <div class="tmaker-bar" id="tmaker-size-div">
-            <div class="tmaker-size">XS</div>
-            <div class="tmaker-size">S</div>
-            <div class="tmaker-size">M</div>
-            <div class="tmaker-size">L</div>
-            <div class="tmaker-size">XL</div>
+            </div>
+            <div id="tmaker-3D-model-div">
+            </div>
+            <div class="tmaker-bar" id="tmaker-colour-div">
+                <div class="tmaker-colour" id="red" onclick="tColour('red')"></div>
+                <div class="tmaker-colour" id="white" onclick="tColour('white')"></div>
+                <div class="tmaker-colour" id="green" onclick="tColour('green')"></div>
+                <div class="tmaker-colour" id="blue" onclick="tColour('blue')"></div>
+                <div class="tmaker-colour" id="yellow" onclick="tColour('yellow')"></div>
+                <div class="tmaker-colour" id="custom-colour" onclick="tColour('custom')"></div>
+            </div>
         </div>
-        <div id="tmaker-3D-model-div">
+        <div id="uploadButton-div">
+            <div class="controlButton" onclick="deleteImage()">Kép Törlése</div>
+            <div class="controlButton" onclick="$('#imageUpload')[0].click()">Feltöltés</div>
+            <div class="controlButton">Kosárba</div>
+        </div>
+        <input type="file" id="imageUpload" style="display: none;" onchange="uploadClicked(event)" />
 
-        </div>
-        <div class="tmaker-bar" id="tmaker-colour-div">
-            <div class="tmaker-colour" id="red"></div>
-            <div class="tmaker-colour" id="white"></div>
-            <div class="tmaker-colour" id="green"></div>
-            <div class="tmaker-colour" id="blue"></div>
-            <div class="tmaker-colour" id="yellow"></div>
-        </div>
     </div>
+    <input type="color" id="colorPicker" style="display: none;" onchange="tColourCustom('custom')">
+
+
+
     <script src="tmaker.js"></script>
 </div>
