@@ -1,0 +1,10 @@
+C:\DNN\DesktopModules\bin\Dnn.Shelby.HelloWorld.dll.config
+C:\DNN\DesktopModules\bin\Dnn.Shelby.HelloWorld.dll
+C:\DNN\DesktopModules\bin\Dnn.Shelby.HelloWorld.pdb
+C:\DNN\DesktopModules\YourRFProject\module-helloworld\Dnn.Shelby.HelloWorld\obj\Debug\Dnn.Shelby.HelloWorld.csproj.AssemblyReference.cache
+C:\DNN\DesktopModules\YourRFProject\module-helloworld\Dnn.Shelby.HelloWorld\obj\Debug\Shelby.Dnn.Dnn.Shelby.HelloWorld.App_LocalResources.Settings.resources
+C:\DNN\DesktopModules\YourRFProject\module-helloworld\Dnn.Shelby.HelloWorld\obj\Debug\Dnn.Shelby.HelloWorld.csproj.GenerateResource.cache
+C:\DNN\DesktopModules\YourRFProject\module-helloworld\Dnn.Shelby.HelloWorld\obj\Debug\Dnn.Shelby.HelloWorld.csproj.CoreCompileInputs.cache
+C:\DNN\DesktopModules\YourRFProject\module-helloworld\Dnn.Shelby.HelloWorld\obj\Debug\Dnn.Shelby.HelloWorld.csproj.CopyComplete
+C:\DNN\DesktopModules\YourRFProject\module-helloworld\Dnn.Shelby.HelloWorld\obj\Debug\Dnn.Shelby.HelloWorld.dll
+C:\DNN\DesktopModules\YourRFProject\module-helloworld\Dnn.Shelby.HelloWorld\obj\Debug\Dnn.Shelby.HelloWorld.pdb

@@ -1,0 +1,103 @@
+﻿@inherits DotNetNuke.Web.Mvc.Framework.DnnWebViewPage<IEnumerable< Shelby.Dnn.Dnn.Shelby.HelloWorld.Models.Item >>
+
+@using System.Text.RegularExpressions
+@using DotNetNuke.Web.Mvc.Helpers
+
+<div id="Items-@Dnn.ModuleContext.ModuleId">
+    <!-- Import THREE.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+
+
+    <!-- Import OBJLoader.js -->
+    <script src="OBJLoader.js"></script>
+    <script src="MTLLoader.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script>
+        var selectedSize = "M";
+        var selectedGender = "M";
+        var selectedColor = "white";
+
+        function selectSize(size) {
+            selectedSize = size;
+            $(".tmaker-size")[0].classList.remove("size-selected");
+            $(".tmaker-size")[1].classList.remove("size-selected");
+            $(".tmaker-size")[2].classList.remove("size-selected");
+            $(".tmaker-size")[3].classList.remove("size-selected");
+            $(".tmaker-size")[4].classList.remove("size-selected");
+            switch (size) {
+                case "XS":
+                    $(".tmaker-size")[0].classList.add("size-selected"); break;
+                case "S":
+                    $(".tmaker-size")[1].classList.add("size-selected"); break;
+                case "M":
+                    $(".tmaker-size")[2].classList.add("size-selected"); break;
+                case "L":
+                    $(".tmaker-size")[3].classList.add("size-selected"); break;
+                case "XL":
+                    $(".tmaker-size")[4].classList.add("size-selected");
+                
+            }
+        }
+        function selectGender(gender) {
+            selectedGender = gender;
+        }
+        
+        function selectColor(color) {
+            selectedColor = color;
+        }
+
+
+        function leadRendeles() {
+        // Üzenet megjelenítése
+            var uzenet = "A rendelését rögzítettük! Az alábbi email címen fogjuk értesíteni:shelby.shirt@gmail.com\n";
+            uzenet += "Méret: " + selectedSize + "\n";
+            uzenet += "Nem: " + selectedGender + "\n";
+            uzenet += "Szín: " + selectedColor;
+            alert(uzenet);
+        // Egyéb rendelési folyamat lépései...
+        }
+    </script>
+
+
+
+    <div id="main-container">
+        <div class="tmaker-container">
+            <div class="tmaker-bar" id="tmaker-size-div">
+                <div class="tmaker-size" onclick="selectSize('XS')">XS</div>
+                <div class="tmaker-size" onclick="selectSize('S')">S</div>
+                <div class="tmaker-size size-selected" onclick="selectSize('M')">M</div>
+                <div class="tmaker-size" onclick="selectSize('L')">L</div>
+                <div class="tmaker-size" onclick="selectSize('XL')">XL</div>
+                <div id="gender-switcher-div" onclick="switchGender()">
+                    <div class="tmaker-gender selected" id="maleSize" onclick="selectGender('M')">M</div>
+                    <div class="switcher"></div>
+                    <div class="tmaker-gender" id="femaleSize" onclick="selectGender('F')">F</div>
+                </div>
+
+
+            </div>
+            <div id="tmaker-3D-model-div">
+            </div>
+            <div class="tmaker-bar" id="tmaker-colour-div">
+                <div class="tmaker-colour" id="red" onclick="tColour('red'); selectColor('red')"></div>
+                <div class="tmaker-colour" id="white" onclick="tColour('white'); selectColor('white')"></div>
+                <div class="tmaker-colour" id="green" onclick="tColour('green'); selectColor('green')"></div>
+                <div class="tmaker-colour" id="blue" onclick="tColour('blue'); selectColor('blue')"></div>
+                <div class="tmaker-colour" id="yellow" onclick="tColour('yellow'); selectColor('yellow')"></div>
+                <div class="tmaker-colour" id="custom-colour" onclick="tColour('custom'); selectColor('custom')"></div>
+            </div>
+        </div>
+        <div id="uploadButton-div">
+            <div class="controlButton" onclick="deleteImage()">Kép Törlése</div>
+            <div class="controlButton" onclick="$('#imageUpload')[0].click()">Feltöltés</div>
+            <div class="controlButton" id="orderButton" onclick="leadRendeles()">Rendelés leadása</div>
+        </div>
+        <input type="file" id="imageUpload" style="display: none;" onchange="uploadClicked(event)" />
+
+    </div>
+    <input type="color" id="colorPicker" style="display: none;" onchange="tColourCustom('custom')">
+
+
+
+    <script src="tmaker.js"></script>
+</div>
